@@ -1,0 +1,20 @@
+{
+    "weather": [
+        "Did you know that honey never spoils?",
+        "Cats can make over 100 different sounds!",
+        "A group of flamingos is called a 'flamboyance'.",
+        "Bananas are berries, but strawberries aren't!"
+    ],
+    "joke": [
+        "Here's a shopping list: milk, bread, eggs, and a pineapple.",
+        "Why did the chicken cross the road? To get to the other side of the grocery store.",
+        "Did you remember to pick up the laundry detergent?",
+        "go to sleep, its 10'o clock"
+    ],
+    "hello": [
+        "The sky is blue, and it's a great day for a picnic!",
+        "Did you know that octopuses have three hearts?",
+        "A tomato is a fruit, but it’s often treated as a vegetable!",
+        "The Eiffel Tower can be 15 cm taller during the summer."
+    ]
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Misinterpretation Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1></h1>
+        <div id="chatbox">
+            <div id="messages"></div>
+        </div>
+        <input type="text" id="user_input" placeholder="Type your message...">
+        <button id="send_btn">Send</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#send_btn').click(function () {
+                var userInput = $('#user_input').val();
+                $('#messages').append('<div class = "userInput">You: ' + userInput + '</div>');
+                $('#user_input').val('');
+
+                $.post('/chat', { user_input: userInput }, function (data) {
+                    $('#messages').append('<div class = "bot-message">Bot: ' + data.response + '</div>');
+
+                    // Scroll to the bottom of the chatbox
+                    $('#chatbox').scrollTop($('#chatbox')[0].scrollHeight);
+                });
+            });
+
+            $('#user_input').keypress(function (e) {
+                if (e.which == 13) {
+                    $('#send_btn').click();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
